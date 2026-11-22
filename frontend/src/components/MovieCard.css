@@ -1,0 +1,162 @@
+/* 
+.movie-card {
+  background: #1b1e28;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #292c38;
+}
+
+.movie-card:hover {
+  transform: translateY(-7px);
+  border-color: #7c5cff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  background: #252834;
+}
+
+.movie-info {
+  padding: 15px;
+}
+
+.movie-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-info p {
+  font-size: 13px;
+  color: #a5a7b2;
+  margin-top: 6px;
+}
+
+.movie-type {
+  text-transform: capitalize;
+  display: inline-block;
+  background: #292c38;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #b9a8ff !important;
+}
+
+.favorite-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 12px;
+  border: 1px solid #343642;
+  border-radius: 8px;
+  background: #252834;
+  color: #b9bbc6;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.favorite-btn:hover {
+  background: #7c5cff;
+  color: white;
+  border-color: #7c5cff;
+}
+
+.favorite-btn.active {
+  background: rgba(124, 92, 255, 0.15);
+  border-color: #7c5cff;
+  color: #b9a8ff;
+}
+
+.favorite-btn.active:hover {
+  background: #7c5cff;
+  color: white;
+}
+
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 12px 15px;
+}
+
+.favorite-btn,
+.watchlist-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.favorite-btn {
+  background-color: #292929;
+  color: white;
+}
+
+.favorite-btn:hover {
+  background-color: #444;
+}
+
+.watchlist-btn {
+  background-color: #e5e7eb;
+  color: #222;
+}
+
+.watchlist-btn:hover {
+  background-color: #d1d5db;
+} */
+
+.movie-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.075);
+  border-radius: 11px;
+  background: #131419;
+  transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+}
+.movie-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(232,73,79,.48);
+  box-shadow: 0 17px 38px rgba(0,0,0,.34), 0 0 0 1px rgba(232,73,79,.06);
+}
+.movie-poster-wrap { position: relative; overflow: hidden; aspect-ratio: 2 / 2.85; background: #1b1c22; }
+.movie-poster { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .55s cubic-bezier(.2,.7,.2,1), filter .35s ease; }
+.movie-card:hover .movie-poster { transform: scale(1.055); filter: brightness(.78); }
+.poster-type { position: absolute; top: 11px; left: 11px; padding: 5px 8px; border: 1px solid rgba(255,255,255,.14); border-radius: 4px; background: rgba(8,9,12,.75); color: #f2eeee; font-size: 8px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; backdrop-filter: blur(8px); }
+.poster-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; opacity: 0; background: linear-gradient(0deg, rgba(8,9,12,.65), transparent 65%); transition: opacity .3s ease; pointer-events: none; }
+.movie-card:hover .poster-overlay { opacity: 1; }
+.poster-overlay-mark { color: rgba(255,255,255,.88); font: 800 48px 'Manrope', sans-serif; }
+.poster-overlay-text { color: #ff8589; font-size: 8px; font-weight: 700; letter-spacing: 2px; }
+.movie-info { padding: 13px 12px 12px; }
+.movie-heading-row { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.movie-info h3 { min-width: 0; overflow: hidden; color: #f5f3f1; font: 700 13px 'Manrope', sans-serif; letter-spacing: -.2px; text-overflow: ellipsis; white-space: nowrap; }
+.movie-year { flex: 0 0 auto; color: #858590; font-size: 10px; }
+.movie-type-label { margin-top: 7px; color: #777781; font-size: 8px; font-weight: 700; letter-spacing: 1.25px; }
+.card-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 13px; }
+.favorite-btn, .watchlist-btn { min-width: 0; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 9px 5px; border: 1px solid rgba(255,255,255,.1); border-radius: 6px; background: #1b1c22; color: #c5c3cb; font-size: 9px; font-weight: 700; cursor: pointer; transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease; }
+.favorite-btn:hover, .watchlist-btn:hover { transform: translateY(-1px); border-color: rgba(232,73,79,.5); color: white; }
+.favorite-btn:hover, .favorite-btn.is-active { border-color: rgba(232,73,79,.38); background: rgba(232,73,79,.13); color: #ff8589; }
+.watchlist-btn:hover, .watchlist-btn.is-active { border-color: rgba(255,255,255,.2); background: #292a32; color: white; }
+.action-icon { font-size: 12px; line-height: 1; }
+
+@media (max-width: 600px) {
+  .movie-info { padding: 10px 9px 10px; }
+  .movie-info h3 { font-size: 11px; }
+  .movie-year { font-size: 9px; }
+  .card-actions { gap: 5px; margin-top: 10px; }
+  .favorite-btn, .watchlist-btn { padding: 8px 3px; gap: 4px; font-size: 8px; }
+  .action-icon { font-size: 10px; }
+}
